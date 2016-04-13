@@ -1,11 +1,34 @@
-This is a fork of https://github.com/humanmade/aws-ses-wp-mail to be more composer friendly
-
 AWS SES is a very simple UI-less plugin for sending `wp_mail()`s email via AWS SES.
 
 Getting Set Up
 ==========
 
-Once you have `git clone`d the repo, or added it as a Git Submodule, add the following constants to your `wp-config.php`:
+You can install this plugin in your WordPress project as a plugin via composer using this setup:
+
+  "require-dev":
+    {
+        "mnsami/composer-custom-directory-installer": "1.1.*",
+        "polevaultweb/aws-ses-wp-mail": "dev-master"
+    },
+    "extra": {
+        "installer-paths": {
+          "htdocs/content/plugins/{$name}": [
+            "polevaultweb/aws-ses-wp-mail"
+          ]
+        }
+    }
+    
+and then use composer update to fetch the package.
+
+The package is intended to be used on a Composer run WordPress site. This means the dependencies for the plugin (AWS SDK) will be installed in the `vendor` dir. You can specify its location:
+
+```PHP
+define( 'WP_VENDOR_PATH', 'path/to/vendor' );
+```
+
+The path is set up by default to be next to the root WP installation directory.
+
+Then setup the plugin as follows:
 
 ```PHP
 define( 'AWS_SES_WP_MAIL_REGION', 'us-east-1' );
@@ -38,8 +61,5 @@ Send a test email via the command line. Good for testing!
 
 Credits
 =======
-Created by Human Made for high volume and large-scale sites. We run AWS SES wp_mail() on sites with millions of monthly page views, and thousands of sites.
 
-Written and maintained by [Joe Hoyle](https://github.com/joehoyle). Thanks to all our [contributors](https://github.com/humanmade/S3-Uploads/graphs/contributors).
-
-Interested in joining in on the fun? [Join us, and become human!](https://hmn.md/is/hiring/)
+This is a fork of https://github.com/humanmade/aws-ses-wp-mail to be more composer friendly
