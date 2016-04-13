@@ -1,0 +1,12 @@
+{
+  "name": "polevaultweb/aws-ses-wp-mail",
+  "description": "A Composer Friendly AWS SES wp_mail() drop-in",
+  "keywords": [
+    "aws",
+    "ses",
+    "wordpress",
+    "mail"
+  ],
+  "homepage": "https://github.com/polevaultweb/aws-ses-wp-mail",
+  "license": "GPL"
+}

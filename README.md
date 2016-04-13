@@ -1,22 +1,4 @@
-<table width="100%">
-	<tr>
-		<td align="left" width="70">
-			<strong>AWS SES wp_mail() drop-in</strong><br />
-			Use AWS SES to send your WordPress emails. Easily.
-		</td>
-		<td align="right" width="20%">
-
-		</td>
-	</tr>
-	<tr>
-		<td>
-			A <strong><a href="https://hmn.md/">Human Made</a></strong> project. Maintained by @joehoyle.
-		</td>
-		<td align="center">
-			<img src="https://hmn.md/content/themes/hmnmd/assets/images/hm-logo.svg" width="100" />
-		</td>
-	</tr>
-</table>
+This is a fork of https://github.com/humanmade/aws-ses-wp-mail to be more composer friendly
 
 AWS SES is a very simple UI-less plugin for sending `wp_mail()`s email via AWS SES.
 
