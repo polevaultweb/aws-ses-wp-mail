@@ -1,10 +1,12 @@
+## AWS SES WP Mail
 AWS SES is a very simple UI-less plugin for sending `wp_mail()`s email via AWS SES.
 
-Getting Set Up
+### Getting Set Up
 ==========
 
 You can install this plugin in your WordPress project as a plugin via composer using this setup:
 
+```
   "require-dev":
     {
         "mnsami/composer-custom-directory-installer": "1.1.*",
@@ -17,6 +19,7 @@ You can install this plugin in your WordPress project as a plugin via composer u
           ]
         }
     }
+```
     
 and then use composer update to fetch the package.
 
@@ -52,14 +55,14 @@ wp aws-ses verify-sending-domain
 
 Once you have verified your sending domain, you are all good to go!
 
-Other Commands
+### Other Commands
 =======
 
 `wp aws-ses send-email <to> <subject> <message> [---from-email=<email>]`
 
 Send a test email via the command line. Good for testing!
 
-Credits
+### Credits
 =======
 
 This is a fork of https://github.com/humanmade/aws-ses-wp-mail to be more composer friendly
