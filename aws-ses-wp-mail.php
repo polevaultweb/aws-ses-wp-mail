@@ -14,6 +14,12 @@ if ( ( ! defined( 'AWS_SES_WP_MAIL_KEY' ) || ! defined( 'AWS_SES_WP_MAIL_SECRET'
 	return;
 }
 
+if ( ! defined( 'WP_VENDOR_PATH' ) ) {
+	define( 'WP_VENDOR_PATH', dirname( dirname( ABSPATH ) ) . '/vendor' );
+}
+
+// Bootstrap dependencies
+require_once WP_VENDOR_PATH. '/autoload.php';
 require_once dirname( __FILE__ ) . '/inc/class-ses.php';
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {

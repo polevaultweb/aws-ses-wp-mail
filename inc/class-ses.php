@@ -142,12 +142,10 @@ class SES {
 	/**
 	 * Get the client for AWS SES.
 	 *
-	 * @return Aws\Client\Ses|WP_Error
+	 * @return \Aws\Ses\SesClient|WP_Error
 	 */
 	public function get_client() {
-		require_once dirname( dirname( __FILE__ ) ) . '/lib/aws-sdk/aws-autoloader.php';
-
-		$params = array();
+		$params = array('version' => 'latest');
 
 		if ( $this->key && $this->secret ) {
 			$params['key'] = $this->key;
@@ -173,7 +171,7 @@ class SES {
 		$params = apply_filters( 'aws_ses_wp_mail_ses_client_params', $params );
 
 		try {
-			return \Aws\Common\Aws::factory( $params )->get( 'ses' );
+			return new \Aws\Ses\SesClient( $params );
 		} catch( \Exception $e ) {
 			return new WP_Error( get_class( $e ), $e->getMessage() );
 		}
