@@ -148,8 +148,8 @@ class SES {
 		$params = array('version' => 'latest');
 
 		if ( $this->key && $this->secret ) {
-			$params['key'] = $this->key;
-			$params['secret'] = $this->secret;
+			$params['credentials']['key'] = $this->key;
+			$params['credentials']['secret'] = $this->secret;
 		}
 
 		if ( $this->region ) {
