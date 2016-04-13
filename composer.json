@@ -8,5 +8,8 @@
     "mail"
   ],
   "homepage": "https://github.com/polevaultweb/aws-ses-wp-mail",
-  "license": "GPL"
+  "license": "GPL",
+  "require": {
+    "aws/aws-sdk-php": "3.17.6"
+  }
 }
